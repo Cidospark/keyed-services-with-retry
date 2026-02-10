@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KeyedServicesWithRetry")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63ba96595483b20b201b5a15b6232bed407efad3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+418317035331da1fbc7a2d3886b722bdf39bf14e")]
 [assembly: System.Reflection.AssemblyProductAttribute("KeyedServicesWithRetry")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KeyedServicesWithRetry")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

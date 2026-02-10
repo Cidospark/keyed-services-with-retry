@@ -2,21 +2,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using KeyedServicesWithRetry.Services;
 
 namespace KeyedServiceWithRetry.Services
 {
     public class PaymentProcessorService
     {
         private readonly PaymentProviderSelector _selector;
-        public PaymentProcessorService(PaymentProviderSelector selector)
+        private readonly IPaymentExecutionEngine _engine;
+        public PaymentProcessorService(PaymentProviderSelector selector, IPaymentExecutionEngine engine)
         {
             _selector = selector;
+            _engine = engine;
         }
 
         public async Task ProcessPaymentAsync(decimal amount)
         {
             var provider = await _selector.GetHealthyProviderAsync();
-            await provider.ProcessAsync(amount);
+            await _engine.ExecuteAsync(provider, amount);
         }
 
         

@@ -35,3 +35,5 @@
 /Users/mrfrancis/Documents/2026 Folder/keyed-services-with-retry/KeyedServicesWithRetry/obj/Debug/net9.0/KeyedServicesWithRetry.pdb
 /Users/mrfrancis/Documents/2026 Folder/keyed-services-with-retry/KeyedServicesWithRetry/obj/Debug/net9.0/KeyedServicesWithRetry.genruntimeconfig.cache
 /Users/mrfrancis/Documents/2026 Folder/keyed-services-with-retry/KeyedServicesWithRetry/obj/Debug/net9.0/ref/KeyedServicesWithRetry.dll
+/Users/mrfrancis/Documents/2026 Folder/keyed-services-with-retry/KeyedServicesWithRetry/bin/Debug/net9.0/Polly.dll
+/Users/mrfrancis/Documents/2026 Folder/keyed-services-with-retry/KeyedServicesWithRetry/bin/Debug/net9.0/Polly.Core.dll

@@ -1,3 +1,4 @@
+using KeyedServicesWithRetry.Middleware;
 using KeyedServicesWithRetry.Services;
 using KeyedServiceWithRetry.Services;
 
@@ -30,5 +31,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.UseMiddleware<GlobalExceptionHandler>();
 
 app.Run();
