@@ -1,0 +1,6 @@
+@KeyedServicesWithRetry_HostAddress = http://localhost:5235
+
+GET {{KeyedServicesWithRetry_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

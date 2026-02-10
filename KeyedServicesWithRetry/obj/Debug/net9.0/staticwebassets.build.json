@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "fiKL1ysuKCYvD8HLmd9gWSyr+U7FbkTW9SGCbiIDX+I=",
+  "Source": "KeyedServicesWithRetry",
+  "BasePath": "_content/KeyedServicesWithRetry",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
