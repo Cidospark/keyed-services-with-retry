@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyedServicesWithRetry", "KeyedServicesWithRetry\KeyedServicesWithRetry.csproj", "{97674A91-6DBD-46BE-B222-B0CEFF2811C9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{214BAE94-5D67-48EF-99D9-D639DF7F8E9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentFallbackTests", "Test\PaymentFallbackTests\PaymentFallbackTests.csproj", "{6058D6CC-A0FE-49CD-94BE-D9F1057D0F59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,12 @@ Global
 		{97674A91-6DBD-46BE-B222-B0CEFF2811C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97674A91-6DBD-46BE-B222-B0CEFF2811C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97674A91-6DBD-46BE-B222-B0CEFF2811C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6058D6CC-A0FE-49CD-94BE-D9F1057D0F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6058D6CC-A0FE-49CD-94BE-D9F1057D0F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6058D6CC-A0FE-49CD-94BE-D9F1057D0F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6058D6CC-A0FE-49CD-94BE-D9F1057D0F59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6058D6CC-A0FE-49CD-94BE-D9F1057D0F59} = {214BAE94-5D67-48EF-99D9-D639DF7F8E9D}
 	EndGlobalSection
 EndGlobal

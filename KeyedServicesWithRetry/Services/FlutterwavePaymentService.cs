@@ -12,7 +12,7 @@ namespace KeyedServiceWithRetry.Services
         public Task<bool> IsHealthyAsync()
         {
             // Simulated health check
-            return Task.FromResult(false);
+            return Task.FromResult(true);
         }
         public Task ProcessAsync(decimal amount)
         {

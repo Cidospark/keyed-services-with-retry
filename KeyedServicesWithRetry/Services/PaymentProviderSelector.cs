@@ -2,28 +2,27 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using KeyedServicesWithRetry.Models;
+using Microsoft.Extensions.Options;
 
 namespace KeyedServiceWithRetry.Services
 {
     public class PaymentProviderSelector
     {
-        private readonly IServiceProvider _serviceProvider;
-        private readonly string[] _priorityOrder =
-        {
-            "flutterwave",
-            "paystack"
-        };
+        private readonly Func<string, IPaymentService> _resolver;
+        private readonly string[] _priorityOrder;
 
-        public PaymentProviderSelector(IServiceProvider serviceProvider)
+        public PaymentProviderSelector(Func<string, IPaymentService> resolver, IOptions<PaymentProviderOptions> options)
         {
-            _serviceProvider = serviceProvider;
+            _resolver = resolver;
+            _priorityOrder = options.Value.PriorityOrder;
         }
         
         public async Task<IPaymentService> GetHealthyProviderAsync()
         {
             foreach (var key in _priorityOrder)
             {
-                var provider = _serviceProvider.GetRequiredKeyedService<IPaymentService>(key);
+                var provider = _resolver(key);
                 if (await provider.IsHealthyAsync())
                 {
                     return provider;

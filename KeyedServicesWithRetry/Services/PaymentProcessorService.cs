@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using KeyedServicesWithRetry.Services;
+using KeyedServicesWithRetry.Services.ProviderMetrics;
 
 namespace KeyedServiceWithRetry.Services
 {
@@ -10,16 +11,30 @@ namespace KeyedServiceWithRetry.Services
     {
         private readonly PaymentProviderSelector _selector;
         private readonly IPaymentExecutionEngine _engine;
-        public PaymentProcessorService(PaymentProviderSelector selector, IPaymentExecutionEngine engine)
+        private readonly IProviderMetricsRegistry _metrics;
+
+        public PaymentProcessorService(IProviderMetricsRegistry metrics, 
+            PaymentProviderSelector selector, IPaymentExecutionEngine engine)
         {
             _selector = selector;
             _engine = engine;
+            _metrics = metrics;
         }
 
         public async Task ProcessPaymentAsync(decimal amount)
         {
             var provider = await _selector.GetHealthyProviderAsync();
-            await _engine.ExecuteAsync(provider, amount);
+            var providerMetrics = _metrics.Get(provider.Name);
+            try
+            {
+                await _engine.ExecuteAsync(provider, amount);
+                providerMetrics.RecordSuccess();
+            }
+            catch
+            {
+                providerMetrics.RecordFailure();
+                throw;
+            }
         }
 
         
