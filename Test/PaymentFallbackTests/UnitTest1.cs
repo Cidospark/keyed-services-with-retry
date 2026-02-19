@@ -16,6 +16,19 @@ public class Tests
     [SetUp]
     public void Setup()
     {
+        /*
+            if i wanted to store inmemory 
+            
+            var inMemorySettings = new Dictionary<string, string?>
+            {
+                { "PaymentProviders:PriorityOrder:0", "fail" },
+                { "PaymentProviders:PriorityOrder:1", "success" }
+            };
+
+            var configuration = new ConfigurationBuilder()
+                .AddInMemoryCollection(inMemorySettings)
+                .Build();
+        */
         var configuration = new ConfigurationBuilder()
         .AddJsonFile("appsettings.Development.json", optional: false)
         .Build();

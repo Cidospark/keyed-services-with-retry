@@ -20,7 +20,7 @@ builder.Services.AddScoped<PaymentProcessorService>();
 builder.Services.AddScoped<Func<string, IPaymentService>>(
     sp => key => sp.GetRequiredKeyedService<IPaymentService>(key) // resolver delegate
 );
-builder.Services.AddScoped<IPaymentExecutionEngine, PaymentExecutionEngine>();
+builder.Services.AddSingleton<IPaymentExecutionEngine, PaymentExecutionEngine>();
 builder.Services.AddSingleton<IProviderMetricsRegistry, ProviderMetricsRegistry>();
 
 
